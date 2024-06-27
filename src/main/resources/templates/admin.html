@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+<head>
+    <meta charset="UTF-8">
+    <title>Admin page</title>
+</head>
+<body>
+    <h1>Admin Page</h1>
+
+    <ul>
+        <li th:each="email: ${userEmails}">
+            <span th:text="${email}"></span>
+            <a th:href="@{/adminPage/deleteUser(email=${email})}">Delete</a>
+        </li>
+    </ul>
+
+
+    <a th:href="@{/}">Home Page</a>
+
+    <a th:href="@{/userPage}">User Page</a>
+
+    <a th:if="${#authentication.isAuthenticated()}"
+       th:text="|Log out ${#authentication.name}|"
+       th:href="@{/logout}"></a>
+
+</body>
+</html>

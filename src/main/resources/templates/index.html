@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+    <h1>Hello world!</h1>
+
+    <h2 th:text="|Hello ${#authentication.name}!|"></h2>
+
+    <a th:href="@{/userPage}">User Page</a>
+
+    <a th:href="@{/adminPage}">Admin Page</a>
+
+    <a th:if="${#authentication.isAuthenticated()}"
+       th:text="|Log out ${#authentication.name}|"
+       th:href="@{/logout}"></a>
+
+</body>
+</html>

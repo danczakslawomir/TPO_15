@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: TPO_15
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/tpo
+#    username: TPO
+#    password: TPO_Lecture
+    url: jdbc:mysql://mysql:3306/tpo
+    username: root
+    password: LastLecture
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+#  security:
+#    user:
+#      name: TPO
+#      password: myPass
